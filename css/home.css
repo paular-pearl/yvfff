@@ -1,0 +1,6 @@
+@import url('../home.css');
+
+/* The source stylesheet is stored at the repository root. */
+.home-hero {
+  background-image: linear-gradient(135deg, rgba(23,37,84,0.92) 0%, rgba(30,58,138,0.85) 50%, rgba(30,64,175,0.8) 100%), url('../group1.JPG');
+}
