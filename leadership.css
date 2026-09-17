@@ -1,0 +1,228 @@
+/* ============================================================
+   LEADERSHIP PAGE — css/leadership.css
+   ============================================================ */
+
+/* ---------- Team Grid ---------- */
+.team-section {
+  padding: var(--space-4xl) 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.team-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-slow);
+  text-align: center;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.team-card__image-wrap {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-light));
+}
+
+.team-card__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.team-card:hover .team-card__image-wrap img {
+  transform: scale(1.05);
+}
+
+.team-card__image-wrap .team-card__overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: var(--space-md);
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.team-card:hover .team-card__overlay { opacity: 1; }
+
+.team-card__overlay a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.2);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  transition: background var(--transition-fast);
+}
+
+.team-card__overlay a:hover { background: var(--color-primary); }
+
+.team-card__overlay svg {
+  width: 16px; height: 16px;
+  fill: var(--color-white);
+}
+
+/* Initials avatar for team members without photos */
+.team-card__initials {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.3);
+  font-family: var(--font-sans);
+}
+
+.team-card__body {
+  padding: var(--space-xl);
+}
+
+.team-card__name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-xs);
+}
+
+.team-card__role {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-md);
+}
+
+.team-card__bio {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ---------- Featured leader (founder) ---------- */
+.founder-spotlight {
+  padding: var(--space-4xl) 0;
+  background: var(--color-primary-subtle);
+}
+
+.founder-spotlight__layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.founder-spotlight__photo img {
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+}
+
+.founder-spotlight__name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-xs);
+}
+
+.founder-spotlight__role {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.founder-spotlight__bio {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--space-lg);
+}
+
+.founder-spotlight__quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--color-gray-800);
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-lg);
+  line-height: 1.7;
+}
+
+/* ---------- Values Section ---------- */
+.values-section {
+  padding: var(--space-4xl) 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.value-item {
+  text-align: center;
+  padding: var(--space-xl);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-slow);
+}
+
+.value-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-subtle);
+}
+
+.value-item__icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
+}
+
+.value-item__title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-sm);
+}
+
+.value-item__desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .team-grid { grid-template-columns: 1fr; max-width: 400px; margin-inline: auto; }
+  .founder-spotlight__layout { grid-template-columns: 1fr; text-align: center; }
+  .founder-spotlight__photo img { max-width: 300px; margin-inline: auto; }
+  .founder-spotlight__quote { text-align: left; }
+  .values-grid { grid-template-columns: 1fr; }
+}

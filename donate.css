@@ -1,0 +1,254 @@
+/* ============================================================
+   DONATE PAGE — css/donate.css
+   ============================================================ */
+
+/* ---------- Donate Hero ---------- */
+.donate-hero {
+  position: relative;
+  padding: var(--space-4xl) 0 calc(var(--space-3xl) + 80px);
+  background: linear-gradient(135deg, rgba(23,37,84,0.92), rgba(30,58,138,0.88) 50%, rgba(30,64,175,0.85)),
+              url('../images/children1.jpg') center/cover no-repeat;
+  color: var(--color-white);
+  text-align: center;
+  overflow: hidden;
+}
+
+.donate-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 100%; height: 80px;
+  background: var(--color-bg);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+/* ---------- Donation Tiers Section ---------- */
+.tiers-section {
+  padding: var(--space-4xl) 0;
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.tier-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-slow);
+  text-align: center;
+  position: relative;
+}
+
+.tier-card--featured {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.04);
+}
+
+.tier-card--featured .tier-badge {
+  position: absolute;
+  top: -14px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-xs) var(--space-lg);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.tier-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.tier-card--featured:hover {
+  transform: scale(1.04) translateY(-6px);
+}
+
+.tier-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.tier-name {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--color-gray-900);
+}
+
+.tier-amount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  font-family: var(--font-sans);
+  margin-bottom: var(--space-md);
+}
+
+.tier-amount span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.tier-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+}
+
+.tier-features {
+  text-align: left;
+  margin-bottom: var(--space-xl);
+}
+
+.tier-features li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  font-size: 0.9rem;
+  color: var(--color-gray-600);
+  border-bottom: 1px solid var(--color-gray-50);
+}
+
+.tier-features li:last-child { border-bottom: none; }
+
+.tier-features .check {
+  width: 20px; height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary-subtle);
+  border-radius: var(--radius-full);
+}
+
+.tier-features .check svg {
+  width: 12px; height: 12px;
+  fill: var(--color-primary);
+}
+
+.tier-card .btn { width: 100%; }
+
+/* ---------- How Donations Help ---------- */
+.how-section {
+  padding: var(--space-4xl) 0;
+  background: var(--color-primary-subtle);
+}
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.how-item {
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.how-item__icon {
+  width: 72px; height: 72px;
+  margin: 0 auto var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  font-size: 2rem;
+}
+
+.how-item__title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--color-gray-900);
+}
+
+.how-item__desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ---------- Other Ways to Give ---------- */
+.other-ways {
+  padding: var(--space-4xl) 0;
+}
+
+.ways-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.way-card {
+  display: flex;
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-slow);
+}
+
+.way-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.way-card__icon {
+  width: 56px; height: 56px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary-subtle);
+  border-radius: var(--radius-lg);
+  font-size: 1.5rem;
+}
+
+.way-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--color-gray-900);
+}
+
+.way-card__text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .tiers-grid { grid-template-columns: 1fr 1fr; }
+  .tier-card--featured { transform: scale(1); }
+  .tier-card--featured:hover { transform: translateY(-6px); }
+}
+
+@media (max-width: 768px) {
+  .tiers-grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+  .how-grid { grid-template-columns: 1fr; }
+  .ways-grid { grid-template-columns: 1fr; }
+}
